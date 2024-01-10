@@ -14,7 +14,7 @@ public class AccountBasicCLI {
     private AccountListingService accountListing;
 
     public void createAccountRequest(String clientID) throws Exception {
-        try {
+        try { //TODO BEST practice exceptions
             bankCore.createNewAccount(createAccountOperationUI.requestAccountType(), clientID);
         } catch(Exception e){
             System.out.println("Repeat the operations, please.");
@@ -23,7 +23,8 @@ public class AccountBasicCLI {
     }
 
     public void getAccounts(String clientID){
-        if(accountListing.getClientAccounts(clientID).size() > 0){
+        //TODO вызов метода 2 раза, сократить вызов метода
+        if(!accountListing.getClientAccounts(clientID).isEmpty()){
             for(Account account: accountListing.getClientAccounts(clientID)){
                 System.out.println(account);
             }
