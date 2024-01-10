@@ -13,11 +13,6 @@ public class AccountDepositServiceImpl implements AccountDepositService {
 
     private final AccountDAO accountDAO;
 
-    /*@Autowired
-    public AccountDepositServiceImpl(AccountDAO accountDAO) {
-        this.accountDAO = accountDAO;
-    }*/
-
     @Override
     public void deposit(Account account, double amount) {
         account.setBalance(account.getBalance() + amount);

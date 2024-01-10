@@ -14,17 +14,6 @@ public class TransactionDepositCLI{
     WithdrawDepositOperationCLIUI withdrawDepositOperationCLIUI;
     AccountListingService accountListingService;
 
-  /*  @Autowired
-    public TransactionDepositCLI(TransactionDeposit transactionDeposit,
-                                 WithdrawDepositOperationCLIUI withdrawDepositOperationCLIUI,
-                                 AccountListingService accountListingService
-                                ){
-        this.transactionDeposit = transactionDeposit;
-        this.withdrawDepositOperationCLIUI = withdrawDepositOperationCLIUI;
-        this.accountListingService = accountListingService;
-
-    }*/
-
     public void depositMoney(String clientID){
         boolean isPositive = false;
         String accountID;

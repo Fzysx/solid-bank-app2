@@ -16,11 +16,7 @@ import kz.jusansingularity.springcore.solidbankapp2.service.AccountListingServic
 public class AccountListingServiceImpl implements AccountListingService{
     private final AccountDAO accountDAO;
 
-    /*@Autowired
-    AccountListingServiceImpl(AccountDAO accountDAO){
-        this.accountDAO = accountDAO;
-    }*/
-    @Override
+      @Override
     public Account getClientAccount(String clientID, String accountID){
         return accountDAO.getClientAccount(clientID, accountID);
     }

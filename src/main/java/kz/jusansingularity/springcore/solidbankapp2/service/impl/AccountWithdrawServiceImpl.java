@@ -12,12 +12,7 @@ import org.springframework.stereotype.Service;
 public class AccountWithdrawServiceImpl implements AccountWithdrawService {
     private final AccountDAO accountDAO;
 
-    /*@Autowired
-    public AccountWithdrawServiceImpl(AccountDAO accountDAO) {
-        this.accountDAO = accountDAO;
-    }*/
-
-    @Override
+     @Override
     public void withdraw(AccountWithdraw account, double amount) {
         account.setBalance(account.getBalance() - amount);
         System.out.println(amount + "$ transferred from " + account.getId() + " account");

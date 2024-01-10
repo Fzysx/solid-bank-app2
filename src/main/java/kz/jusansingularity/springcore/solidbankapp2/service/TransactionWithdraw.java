@@ -14,12 +14,6 @@ public class TransactionWithdraw {
     private final AccountWithdrawService accountWithdrawService;
     private final TransactionDAO transactionDAO;
 
-   /* @Autowired
-    public TransactionWithdraw(AccountWithdrawService accountWithdrawService, TransactionDAO transactionDAO) {
-        this.accountWithdrawService = accountWithdrawService;
-        this.transactionDAO = transactionDAO;
-    }*/
-
     public void execute(AccountWithdraw account, double amount){
         double  balanceBeforeTransaction = account.getBalance();
         accountWithdrawService.withdraw(account, amount);

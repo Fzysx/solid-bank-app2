@@ -17,11 +17,6 @@ import kz.jusansingularity.springcore.solidbankapp2.service.AccountListingServic
 public class AccountCreationServiceImpl implements AccountCreationService{
     private final AccountDAO accountDAO;
 
-   /* @Autowired
-    public AccountCreationServiceImpl(AccountDAO accountDAO){
-        this.accountDAO = accountDAO;
-    }*/
-
     @Override
     public void create(AccountType accountType, long bankID, String clientID, long accountID){
         if(accountType.getCode().equals("FIXED")){

@@ -13,11 +13,6 @@ public class BankCore {
     private long lastAccountNumber = 1;
     private final AccountCreationService accountCreation;
 
-    /*@Autowired
-    public BankCore(AccountCreationService accountCreation){
-        this.accountCreation = accountCreation;
-    }*/
-
     public void createNewAccount(AccountType accountType, String clientID){
         accountCreation.create(accountType, id, clientID, lastAccountNumber);
         incrementLastAccountNumber();

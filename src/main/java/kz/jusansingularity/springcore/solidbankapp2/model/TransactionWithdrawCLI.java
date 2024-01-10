@@ -13,12 +13,6 @@ public class TransactionWithdrawCLI{
     WithdrawDepositOperationCLIUI withdrawDepositOperationCLIUI;
     AccountListingService accountListing;
 
-    /*@Autowired
-    public TransactionWithdrawCLI(TransactionWithdraw transactionWithdraw, WithdrawDepositOperationCLIUI withdrawDepositOperationCLIUI, AccountListingService accountListing) {
-        this.transactionWithdraw = transactionWithdraw;
-        this.withdrawDepositOperationCLIUI = withdrawDepositOperationCLIUI;
-        this.accountListing = accountListing;
-    }*/
 
     public void withdrawMoney(String clientID) {
         boolean isPositive = false;
@@ -33,7 +27,7 @@ public class TransactionWithdrawCLI{
             try{
                 while (!isPositive) {
                     amount = withdrawDepositOperationCLIUI.requestClientAmount();
-                    if(accountWithdraw.getBalance() > amount){
+                    if(accountWithdraw.getBalance() >= amount){
                         if (amount > 0) {
                             transactionWithdraw.execute(accountWithdraw, amount);
 
@@ -43,6 +37,7 @@ public class TransactionWithdrawCLI{
                         }
                     } else {
                         System.out.println("You do not have enough funds in your account");
+                        return;
                     }
                 }
             } catch(Exception e) {

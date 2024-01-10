@@ -13,20 +13,18 @@ public class AccountBasicCLI {
     private BankCore bankCore;
     private AccountListingService accountListing;
 
-    /*@Autowired
-    public AccountBasicCLI(CreateAccountOperationUI createAccountOperationUI, BankCore bankCore, AccountListingService accountListing){
-        this.createAccountOperationUI = createAccountOperationUI;
-        this.bankCore = bankCore;
-        this.accountListing = accountListing;
-    }*/
-
     public void createAccountRequest(String clientID) throws Exception {
-        bankCore.createNewAccount(createAccountOperationUI.requestAccountType(), clientID);
+        try { //TODO BEST practice exceptions
+            bankCore.createNewAccount(createAccountOperationUI.requestAccountType(), clientID);
+        } catch(Exception e){
+            System.out.println("Repeat the operations, please.");
+        }
 
     }
 
     public void getAccounts(String clientID){
-        if(accountListing.getClientAccounts(clientID).size() > 0){
+        //TODO вызов метода 2 раза, сократить вызов метода
+        if(!accountListing.getClientAccounts(clientID).isEmpty()){
             for(Account account: accountListing.getClientAccounts(clientID)){
                 System.out.println(account);
             }

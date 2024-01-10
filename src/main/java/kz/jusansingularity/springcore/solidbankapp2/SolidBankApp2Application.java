@@ -16,7 +16,7 @@ import kz.jusansingularity.springcore.solidbankapp2.service.MyCLI;
 
 @SpringBootApplication
 public class SolidBankApp2Application implements CommandLineRunner {
-	@Autowired
+	@Autowired //TODO Посмотреть другие виды injections
 	private ApplicationContext context;
 	public static void main(String[] args) {
 
@@ -25,18 +25,18 @@ public class SolidBankApp2Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... arg0) throws Exception {
-		boolean running = true;
+		boolean running = true; //TODO другие методы реализации
 		String clientID = "1";
 
 		MyCLI myCLI = context.getBean(MyCLI.class);
 		AccountBasicCLI accountBasicCLI = context.getBean(AccountBasicCLI.class);
 		TransactionDepositCLI transactionDepositCLI = context.getBean(TransactionDepositCLI.class);
 		TransactionWithdrawCLI transactionWithdrawCLI = context.getBean(TransactionWithdrawCLI.class);
-		MemoryTransactionDAO memoryTransactionDAO = context.getBean(MemoryTransactionDAO.class);
+		MemoryTransactionDAO memoryTransactionDAO = context.getBean(MemoryTransactionDAO.class); //Посмотреть другие методы инициализации бинов
 
 		String helpMessage = "1 - show accounts\n2 - create account\n3 - deposit\n4 - withdraw\n5 - transfer\n6 - this message\n7 - exit\n";
 		System.out.printf("Welcome to CLI bank service\n");
-		System.out.printf("Enter operation number: \n");
+		System.out.printf("Enter operation number: \n"); //TODO Вынести строковые переменные в Properties
 		System.out.printf(helpMessage);
 
 		while(running){

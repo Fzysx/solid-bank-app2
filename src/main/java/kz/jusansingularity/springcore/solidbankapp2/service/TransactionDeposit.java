@@ -15,12 +15,6 @@ public class TransactionDeposit {
     private final AccountDepositService accountDepositService;
     private final TransactionDAO transactionDAO;
 
-   /* @Autowired
-    public TransactionDeposit(AccountDepositService accountDepositService, TransactionDAO transactionDAO) {
-        this.accountDepositService = accountDepositService;
-        this.transactionDAO = transactionDAO;
-    }*/
-
     public void execute(Account account, double amount){
 
         double  balanceBeforeTransaction = account.getBalance();
